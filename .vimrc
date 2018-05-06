@@ -23,7 +23,6 @@ set scrolloff=5     "距离顶部和底部5行"
 set laststatus=2    "命令行为两行"
 set fenc=utf-8      "文件编码"
 set backspace=2
-set mouse=a     "启用鼠标"
 set selection=exclusive
 set selectmode=mouse,key
 set matchtime=5
