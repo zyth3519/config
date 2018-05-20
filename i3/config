@@ -157,11 +157,9 @@ bindsym $mod+r mode "resize"
 #***********************************************************************************
 exec --no-startup-id fcitx 
 exec --no-startup-id mate-power-manager 
-exec --no-startup-id /home/zyth/.shell/create
+exec --no-startup-id redshift-gtk 
 exec --no-startup-id compton -b
-exec_always --no-startup-id feh --bg-scale "/home/zyth/Pictures/v2-9654cc128ceed7eabae5bdfde31ad765_r.jpg"
-exec --no-startup-id xset s 0
-exec --no-startup-id xset dpms 6000 8000 9000
+exec_always --no-startup-id feh --bg-scale "/home/zyth/Pictures/65809956_p0.jpg"
 #******************************************************************************************
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master playback 5+  
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master playback 5-  
@@ -171,6 +169,7 @@ bindsym --release $mod+Shift+m exec --no-startup-id firefox
 bindsym --release $mod+m exec --no-startup-id google-chrome-stable
 bindsym --release $mod+Print exec --no-startup-id scrot %Y-%m-%d-%T.png -e 'mv $f ~/images/'
 bindsym --release $mod+Shift+w exec --no-startup-id netease-cloud-music
+bindsym --release $mod+Shift+s exec --no-startup-id steam
 #*********************************************电源管理*************************************
 set $mode_system  锁屏(L) 注销(O) 重启(R) 关机(S) 退出(Esc)
 bindsym $mod+c mode "$mode_system"
