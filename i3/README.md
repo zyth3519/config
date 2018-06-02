@@ -7,4 +7,5 @@ feh 壁纸
 scrot  截图
 ttf-font-awesome 字体
 conky 状态栏
+rofi 程序启动器
 ```
