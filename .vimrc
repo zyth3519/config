@@ -47,6 +47,9 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'liuchengxu/space-vim-dark'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'suan/vim-instant-markdown'
 call vundle#end()
 filetype plugin indent on
 "====================插件配置==================
@@ -100,3 +103,6 @@ let g:ycm_complete_in_strings = 1
 let g:ycm_collect_identifiers_from_comments_and_strings = 0
 
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR> " 跳转到定义处
+
+let g:syntastic_java_checkers = []
+let g:EclimFileTypeValidate = 0
