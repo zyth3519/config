@@ -1,0 +1,183 @@
+# i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+# mod key
+set $mod Mod4
+
+# fonts
+font pango: hack, Awesome 10
+
+# resolv i3 transparancy bug
+new_window pixel 5
+# start a terminal
+bindsym $mod+Return exec termite 
+
+# start drofi dmenu
+bindsym $mod+Tab exec --no-startup-id rofi -show window
+bindsym $mod+Shift+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id rofi -show drun
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+m focus right
+ 
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+m move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+z layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+q focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+#scratchpad
+bindsym $mod+twosuperior scratchpad show
+bindsym $mod+Shift+twosuperior move scratchpad
+
+#Swith with same key to precedent workspace
+workspace_auto_back_and_forth yes
+
+# set workspace names
+set $tag1 "1:"
+set $tag2 "2:"
+set $tag3 "3:"
+set $tag4 "4:"
+set $tag5 "5:"
+set $tag6 "6:"
+set $tag7 "7:"
+set $tag8 "8:"
+set $tag9 "9:"
+set $tag10 "10:"
+
+#colors
+# class                 border  backgr. text    indicator child_border
+client.focused          #FFFFFF #FFFFFF #000000 #000000   #000000
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #000000
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+#i3-gaps
+for_window [class="^.*"] border pixel 0
+gaps inner 4
+gaps outer -4
+smart_gaps on
+smart_borders on
+
+# apps
+bindsym --release $mod+Shift+t exec --no-startup-id thunar
+bindsym --release $mod+Shift+m exec --no-startup-id firefox
+bindsym --release $mod+m exec --no-startup-id google-chrome-stable
+bindsym --release $mod+Print exec --no-startup-id scrot %Y-%m-%d-%T.png -e 'mv $f ~/Pictures/shot/'
+bindsym --release $mod+Shift+w exec --no-startup-id netease-cloud-music
+bindsym --release $mod+Shift+v exec --no-startup-id vlc
+
+#toggle workspace's display screen
+bindsym $mod+less move workspace to output right
+bindsym $mod+Shift+less move workspace to output up
+
+# switch to workspace
+bindsym $mod+1 workspace 1 $tag1 
+bindsym $mod+2 workspace 2 $tag2
+bindsym $mod+3 workspace 3 $tag3
+bindsym $mod+4 workspace 4 $tag4
+bindsym $mod+5 workspace 5 $tag5 
+bindsym $mod+6 workspace 6 $tag6
+bindsym $mod+7 workspace 7 $tag7
+bindsym $mod+8 workspace 8 $tag8
+bindsym $mod+9 workspace 9 $tag9
+bindsym $mod+0 workspace 10 $tag10
+
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1 $tag1 
+bindsym $mod+Shift+2 move container to workspace 2 $tag2
+bindsym $mod+Shift+3 move container to workspace 3 $tag3
+bindsym $mod+Shift+4 move container to workspace 4 $tag4
+bindsym $mod+Shift+5 move container to workspace 5 $tag5
+bindsym $mod+Shift+6 move container to workspace 6 $tag6
+bindsym $mod+Shift+7 move container to workspace 7 $tag7
+bindsym $mod+Shift+8 move container to workspace 8 $tag8
+bindsym $mod+Shift+9 move container to workspace 9 $tag9
+bindsym $mod+Shift+0 move container to workspace 10 $tag10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym m resize grow width 10 px or 10 ppt
+
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+exec --no-startup-id fcitx 
+exec --no-startup-id redshift
+exec --no-startup-id mate-power-manager 
+exec --no-startup-id redshift-gtk 
+exec --no-startup-id compton -b
+exec --no-startup-id mpd ~/.config/mpd/mpd.conf
+exec_always --no-startup-id feh --bg-scale "/home/zyth/Wallpaper/65809956_p0.jpg"
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master playback 5+  
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master playback 5-  
+bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle  
