@@ -78,7 +78,7 @@ font-3 = FontAwesome:pixelsize=14;2
 
 modules-left =  i3 xwindow
 modules-center =
-modules-right = pkg backlight volume wlan eth battery date powermenu
+modules-right = backlight volume wlan eth battery date powermenu
 
 tray-position = 
 tray-padding = 4
