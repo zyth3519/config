@@ -1,2 +1,11 @@
-rofi.theme:  Pop-Dark
 rofi.font:   WenQuanYi Micro Hei 11
+rofi.modi: drun
+rofi.lines: 5
+rofi.columns: 1
+rofi.width: 40
+rofi.drun-icon-theme: Pop
+rofi.show-icons: true
+rofi.sidebar-mode: false
+rofi.m: -4
+rofi.theme: andrea
+rofi.hide-scrollbar: true
