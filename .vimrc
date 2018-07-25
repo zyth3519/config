@@ -45,11 +45,13 @@ Plugin 'tell-k/vim-autopep8'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'liuchengxu/space-vim-dark'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'suan/vim-instant-markdown'
+Plugin 'morhetz/gruvbox'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()
 filetype plugin indent on
 "====================插件配置==================
@@ -71,8 +73,6 @@ let g:indentLine_enabled = 1
 let g:autopep8_disable_show_diff=1
 
 map <F3> :TagbarToggle<CR>
-
-color space-vim-dark
 
 "============================YCM配置===========================
 " 自动补全配置
@@ -106,3 +106,9 @@ nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR> " 跳转到�
 
 let g:syntastic_java_checkers = []
 let g:EclimFileTypeValidate = 0
+
+
+colorscheme gruvbox
+
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
