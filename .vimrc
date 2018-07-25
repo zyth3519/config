@@ -48,7 +48,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim'
-Plug 'rking/ag.vim'
 call plug#end()
 "==============================================
 "F2开启和关闭树"
