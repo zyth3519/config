@@ -2,7 +2,7 @@
 
 ```
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 进入vim执行
 ```
@@ -10,5 +10,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 ```
 需要安装
 ```
-ctags vim-instant-markdown
+ctags vim-instant-markdown astyle
+
+pip install yapf
 ```
