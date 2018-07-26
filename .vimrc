@@ -56,6 +56,7 @@ Plug 'artur-shaik/vim-javacomplete2'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Chiel92/vim-autoformat'
+Plug 'ervandew/supertab'
 call plug#end()
 "=======================
 "       插件设置
@@ -91,6 +92,9 @@ let g:ycm_semantic_triggers =  {
             \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
             \ 'cs,lua,javascript': ['re!\w{2}'],
             \ }
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
 
 autocmd Filetype java set makeprg=javac\ %
 autocmd Filetype java set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
@@ -105,7 +109,9 @@ let g:JavaComplete_UseFQN = 1
 let g:JavaComplete_ServerAutoShutdownTime = 300
 let g:JavaComplete_MavenRepositoryDisable = 0
 
-let g:UltiSnipsExpandTrigger="<M-j>"
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 au BufWrite * :Autoformat
 "=======================
