@@ -16,6 +16,9 @@ set foldlevel=99
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set autoread
+set splitbelow
+set equalalways!
+set eadirection=hor
 
 set  tabstop=4
 set  softtabstop=4
@@ -57,6 +60,8 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Chiel92/vim-autoformat'
 Plug 'ervandew/supertab'
+Plug 'yianwillis/vimcdoc'
+Plug 'tpope/vim-dispatch'
 call plug#end()
 "=======================
 "       插件设置
@@ -96,12 +101,8 @@ let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
 
-autocmd Filetype java set makeprg=javac\ %
 autocmd Filetype java set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
-
-autocmd Filetype python set makeprg=python\ %
 autocmd Filetype python set errorformat=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
-nmap <F5> :w<cr>:make!<Return>:copen<Return>
 
 "java-JavaComplete2
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
@@ -114,6 +115,16 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 au BufWrite * :Autoformat
+
+func! JavaRun()
+    let javaname = expand("%:r")
+    if bufexists("java") == 1
+        bunload java
+    endif
+    call job_start(["java",javaname],
+                \ {'out_io': 'buffer', 'out_name': 'java',"out_modifiable": 0,'out_msg':0})
+    10sp java
+endfunc
 "=======================
 "       按键设置
 "=======================
@@ -143,7 +154,7 @@ map <F2> :NERDTreeToggle<cr>
 
 map <F3> :TagbarToggle<CR>
 
-map <F6> :Autoformat<CR>
+map <F7> :Autoformat<CR>
 
 
 "java-JavaComplete2按键
@@ -172,3 +183,7 @@ vmap <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)"可视化模�
 
 nmap <silent> <buffer> <leader>jn <Plug>(JavaComplete-Generate-NewClass)"生成类"
 nmap <silent> <buffer> <leader>jN <Plug>(JavaComplete-Generate-ClassInFile)"根据模板生成类"
+
+autocmd Filetype java nmap <F6> :call JavaRun()<cr>
+autocmd Filetype java nmap <F5> :w<cr>:cexpr system("javac " . expand("%")) <cr>:copen<cr>
+autocmd Filetype python nmap <F5> :w<cr>:cexpr system("python " . expand("%")) <cr>:copen<cr>
