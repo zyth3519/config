@@ -134,7 +134,6 @@ nmap <Right> <Nop>
 nmap <Up> <Nop>
 nmap <Down> <Nop>
 
-nmap <space> za "折叠
 nmap <c-j> <c-w><c-j>
 nmap <c-k> <c-w><c-k>
 nmap <c-l> <c-w><c-l>
