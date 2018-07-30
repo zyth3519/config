@@ -120,8 +120,9 @@ func! JavaRun()
     let javaname = expand("%:r")
     if bufexists("java") == 1
         bunload java
+        call job_stop(g:job)
     endif
-    call job_start(["java",javaname],
+    let g:job = job_start(["java",javaname],
                 \ {'out_io': 'buffer', 'out_name': 'java',"out_modifiable": 0,'out_msg':0})
     10sp java
 endfunc
@@ -154,7 +155,7 @@ map <F2> :NERDTreeToggle<cr>
 
 map <F3> :TagbarToggle<CR>
 
-map <F7> :Autoformat<CR>
+map <F8> :Autoformat<CR>
 
 
 "java-JavaComplete2按键
@@ -185,5 +186,6 @@ nmap <silent> <buffer> <leader>jn <Plug>(JavaComplete-Generate-NewClass)"生成�
 nmap <silent> <buffer> <leader>jN <Plug>(JavaComplete-Generate-ClassInFile)"根据模板生成类"
 
 autocmd Filetype java nmap <F6> :call JavaRun()<cr>
+autocmd Filetype java nmap <F7> :call job_stop(job)<cr>
 autocmd Filetype java nmap <F5> :w<cr>:cexpr system("javac " . expand("%")) <cr>:copen<cr>
 autocmd Filetype python nmap <F5> :w<cr>:cexpr system("python " . expand("%")) <cr>:copen<cr>
