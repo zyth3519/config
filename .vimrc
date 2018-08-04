@@ -66,13 +66,13 @@ call plug#end()
 "=======================
 "       插件设置
 "=======================
-let nerdtreechdirmode=1
+let NERDTreeChDirMode=1
 "显示书签"
-let nerdtreeshowbookmarks=1
+let NERDTreeShowBookmarks=1
 "设置忽略文件类型"
-let nerdtreeignore=['\~$', '\.pyc$', '\.swp$']
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
 "窗口大小"
-let nerdtreewinsize=25
+let NERDTreeWinSize=25
 
 "缩进指示线"
 let g:indentLine_char='┆'
@@ -90,6 +90,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:ycm_key_invoke_completion = '<c-z>'
 let g:ycm_python_binary_path = 'python'
 set completeopt=menu,menuone
+let g:ycm_confirm_extra_conf=0
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>"转到定义 \g"
@@ -129,12 +130,6 @@ endfunc
 "=======================
 "       按键设置
 "=======================
-nmap <Left> <Nop>
-nmap <Right> <Nop>
-nmap <Up> <Nop>
-nmap <Down> <Nop>
-
-nmap <space> za "折叠
 nmap <c-j> <c-w><c-j>
 nmap <c-k> <c-w><c-k>
 nmap <c-l> <c-w><c-l>
