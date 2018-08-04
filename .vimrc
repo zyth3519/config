@@ -182,5 +182,5 @@ nmap <silent> <buffer> <leader>jN <Plug>(JavaComplete-Generate-ClassInFile)"ца╣ц
 
 autocmd Filetype java nmap <F6> :call JavaRun()<cr>
 autocmd Filetype java nmap <F7> :call job_stop(job)<cr>
-autocmd Filetype java nmap <F5> :w<cr>:cexpr system("javac " . expand("%")) <cr>:copen<cr>
+autocmd Filetype java nmap <F5> :w<cr>:cexpr system("javac " . expand("%")) <cr>
 autocmd Filetype python nmap <F5> :w<cr>:cexpr system("python " . expand("%")) <cr>:copen<cr>
