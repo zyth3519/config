@@ -145,9 +145,8 @@ func! JavacRun()
     if bufexists("java") == 1
         bunload java
     endif
-    cexpr system("javac " . expand("%") . " -d out/")
+    cexpr system("javac -cp src/ " . expand("%") . " -d out/")
     cw
-
 endfunction
 "=======================
 "       按键设置
@@ -212,5 +211,5 @@ nmap <silent> <buffer> <leader>jN <Plug>(JavaComplete-Generate-ClassInFile)
 
 autocmd Filetype java nmap <leader>rs :call job_stop(job)<cr>
 autocmd Filetype java nmap <leader>rr :call JavaRun()<cr>
-autocmd Filetype java nmap <leader>rc :call JavacRun()<cr>
+autocmd Filetype java nmap <leader>rc :call JavacRun()<cr><cr>
 autocmd Filetype python nmap <leader>rp :w<cr>:cexpr system("python " . expand("%")) <cr>:copen<cr>
