@@ -53,7 +53,6 @@ Plug 'suan/vim-instant-markdown'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'artur-shaik/vim-javacomplete2'
 Plug 'SirVer/ultisnips'
@@ -61,7 +60,6 @@ Plug 'honza/vim-snippets'
 Plug 'Chiel92/vim-autoformat'
 Plug 'ervandew/supertab'
 Plug 'yianwillis/vimcdoc'
-Plug 'tpope/vim-dispatch'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdcommenter'
 call plug#end()
@@ -183,26 +181,34 @@ nmap <leader>jR <Plug>(JavaComplete-Imports-RemoveUnused)
 nmap <leader>ji <Plug>(JavaComplete-Imports-AddSmart)
 nmap <leader>jii <Plug>(JavaComplete-Imports-Add)
 
+imap <C-j>I <Plug>(JavaComplete-Imports-AddMissing)
+imap <C-j>R <Plug>(JavaComplete-Imports-RemoveUnused)
+imap <C-j>i <Plug>(JavaComplete-Imports-AddSmart)
+imap <C-j>ii <Plug>(JavaComplete-Imports-Add)
+
+nmap <leader>jM <Plug>(JavaComplete-Generate-AbstractMethods)"生成需要实现的方法"
+
+imap <C-j>jM <Plug>(JavaComplete-Generate-AbstractMethods)
+
 nmap <leader>jA <Plug>(JavaComplete-Generate-Accessors)
 nmap <leader>js <Plug>(JavaComplete-Generate-AccessorSetter)
 nmap <leader>jg <Plug>(JavaComplete-Generate-AccessorGetter)
 nmap <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
-
 nmap <leader>jts <Plug>(JavaComplete-Generate-ToString)"生成toString方法"
 nmap <leader>jeq <Plug>(JavaComplete-Generate-EqualsAndHashCode)"生成equals和hashCode方法"
-nmap <leader>jc <Plug>(JavaComplete-Generate-Constructor)"生成构造器"
-nmap <leader>jcc <Plug>(JavaComplete-Generate-DefaultConstructor)"生成默认构造器"
+nmap <leader>jc <Plug>(JavaComplete-Generate-Constructor) "生成构造函数"
+nmap <leader>jcc <Plug>(JavaComplete-Generate-DefaultConstructor) "生成默认构造函数"
 
-imap <C-j>s <Plug>(JavaComplete-Generate-AccessorSetter)"插入模式下生成Set方法"
-imap <C-j>g <Plug>(JavaComplete-Generate-AccessorGetter)"插入模式下生成Set方法"
-imap <C-j>a <Plug>(JavaComplete-Generate-AccessorSetterGetter)"插入模式下生成Set方法"
+imap <C-j>s <Plug>(JavaComplete-Generate-AccessorSetter)
+imap <C-j>g <Plug>(JavaComplete-Generate-AccessorGetter)
+imap <C-j>a <Plug>(JavaComplete-Generate-AccessorSetterGetter)
 
-vmap <leader>js <Plug>(JavaComplete-Generate-AccessorSetter)"可视化模式下生成Set方法"
-vmap <leader>jg <Plug>(JavaComplete-Generate-AccessorGetter) "可视化模式下生成Get方法"
-vmap <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)"可视化模式下生成Set和Get方法"
+vmap <leader>js <Plug>(JavaComplete-Generate-AccessorSetter)
+vmap <leader>jg <Plug>(JavaComplete-Generate-AccessorGetter)
+vmap <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
 
-nmap <silent> <buffer> <leader>jn <Plug>(JavaComplete-Generate-NewClass)"生成类"
-nmap <silent> <buffer> <leader>jN <Plug>(JavaComplete-Generate-ClassInFile)"根据模板生成类"
+nmap <silent> <buffer> <leader>jn <Plug>(JavaComplete-Generate-NewClass)
+nmap <silent> <buffer> <leader>jN <Plug>(JavaComplete-Generate-ClassInFile)
 
 autocmd Filetype java nmap <leader>rs :call job_stop(job)<cr>
 autocmd Filetype java nmap <leader>rr :call JavaRun()<cr>
