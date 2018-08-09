@@ -132,12 +132,8 @@ func! JavaRun()
     endif
     if bufexists("java") == 1
         bunload java
-        call job_stop(g:job)
     endif
-
-    let g:job = job_start("java -cp out/ ". s:currentClassName,
-                \ {'out_io': 'buffer', 'out_name': "java","out_modifiable": 0,'out_msg':0})
-    10sp java
+    call term_start("java -cp out/ " . s:currentClassName, {"term_name":"java", "term_rows":10} )
 endfunc
 
 func! JavacRun()
