@@ -1,13 +1,10 @@
-call plug#begin('~/.vim/plugged')
-Plug 'artur-shaik/vim-javacomplete2'
-call plug#end()
-
-set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
-
 setlocal omnifunc=javacomplete#Complete
 let g:JavaComplete_UseFQN = 1
 let g:JavaComplete_ServerAutoShutdownTime = 300
 let g:JavaComplete_MavenRepositoryDisable = 0
+
+set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
+
 
 func! JavaRun()
     let s:line = getline(search("package","nb",getline("0$")))
@@ -19,7 +16,12 @@ func! JavaRun()
     if bufexists("java") == 1
         bunload java
     endif
-    call term_start("java -cp out/ " . s:currentClassName, {"term_name":"java", "term_rows":10} )
+    if filewritable("out") == 2
+        call term_start("java -cp out/ " . s:currentClassName, {"term_name":"java", "term_rows":10} )
+    else
+        call term_start("java " . s:currentClassName, {"term_name":"java", "term_rows":10} )
+    endif
+
 endfunc
 
 func! JavacRun()
@@ -27,7 +29,13 @@ func! JavacRun()
     if bufexists("java") == 1
         bunload java
     endif
-    cexpr system("javac -cp src/ " . expand("%") . " -d out/")
+    if filewritable("out") == 2
+        if filewritable("src") == 2
+            cexpr system("javac -cp src/ " . expand("%") . " -d out/")
+        endif
+    else
+        cexpr system("javac " . expand("%"))
+    endif
     cw
 endfunction
 

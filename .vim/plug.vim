@@ -21,6 +21,7 @@ Plug 'ervandew/supertab'
 Plug 'yianwillis/vimcdoc'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdcommenter'
+Plug 'artur-shaik/vim-javacomplete2'
 call plug#end()
 "=======================
 "       插件设置
@@ -64,8 +65,6 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
-au BufWrite * :Autoformat
-
 let g:ag_working_path_mode="r"
 
 let g:ctrlp_custom_ignore = {
@@ -73,6 +72,8 @@ let g:ctrlp_custom_ignore = {
             \ 'file': '\v\.(exe|so|dll|class|)$',
             \ 'link': 'some_bad_symbolic_links',
             \ }
+
+au BufWrite * :Autoformat
 
 map <F2> :NERDTreeToggle<cr>
 
