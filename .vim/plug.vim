@@ -22,6 +22,7 @@ Plug 'yianwillis/vimcdoc'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'artur-shaik/vim-javacomplete2'
+Plug 'easymotion/vim-easymotion'
 call plug#end()
 "=======================
 "       插件设置
@@ -80,3 +81,18 @@ map <F2> :NERDTreeToggle<cr>
 map <F3> :TagbarToggle<CR>
 
 map <F8> :Autoformat<CR>
+
+" <Leader>f{char} to move to {char}
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Move to line
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
+
+" Move to word
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
