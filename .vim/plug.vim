@@ -28,14 +28,16 @@ call plug#end()
 "       插件设置
 "=======================
 let NERDTreeChDirMode=1
+let NERDTreeMinimalUI=1
 "设置忽略文件类型"
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$',]
-let NERDTreeWinSize=25
+let NERDTreeWinSize=23
+autocmd vimenter * NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "缩进指示线"
 let g:indentLine_char='│'
 let g:indentLine_enabled = 1
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "主题
 colorscheme gruvbox
@@ -76,8 +78,12 @@ let g:ctrlp_custom_ignore = {
 
 au BufWrite * :Autoformat
 
+autocmd VimEnter * nested :TagbarOpen
 let g:tagbar_vertical = 15
 let g:tagbar_autoshowtag = 1
+let g:tagbar_compact = 1
+
+autocmd VimEnter * wincmd l
 
 map <F2> :NERDTreeToggle<cr>
 
