@@ -45,7 +45,7 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
 "YCM
-let g:ycm_key_invoke_completion = '<c-z>'
+let g:ycm_key_invoke_completion = '<C-z>'
 let g:ycm_python_binary_path = 'python'
 set completeopt=menu,menuone
 let g:ycm_confirm_extra_conf=0
@@ -75,6 +75,9 @@ let g:ctrlp_custom_ignore = {
             \ }
 
 au BufWrite * :Autoformat
+
+let g:tagbar_vertical = 15
+let g:tagbar_autoshowtag = 1
 
 map <F2> :NERDTreeToggle<cr>
 
