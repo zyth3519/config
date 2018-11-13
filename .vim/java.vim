@@ -5,8 +5,8 @@ let g:JavaComplete_MavenRepositoryDisable = 0
 
 set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
 
-
-func! JavaRun()
+function Java()
+    ccl
     let s:line = getline(search("package","nb",getline("0$")))
     if s:line != ''
         let s:currentClassName = split(split(s:line," ")[1],";")[0].".".expand("%:t:r")
@@ -21,24 +21,45 @@ func! JavaRun()
     else
         call term_start("java " . s:currentClassName, {"term_name":"java", "term_rows":10} )
     endif
-
 endfunc
 
-func! JavacRun()
+function Javac()
     w
-    if bufexists("java") == 1
-        bunload java
-    endif
     if filewritable("out") == 2
         if filewritable("src") == 2
-            cexpr system("javac -cp src/ " . expand("%") . " -d out/")
+            let g:job=job_start('javac -cp src/ ' . expand("%") . " -d out/",
+                        \{'out_io':'file','out_name':$HOME . "/.cache/vim/javac",
+                        \'err_io':'out','out_msg':0})
         endif
     else
-        cexpr system("javac " . expand("%"))
+        let g:job=job_start('javac ' . expand("%"),
+                    \{'out_io':'file','out_name':$HOME . "/.cache/vim/javac",
+                    \'err_io':'out','out_msg':0})
+        call job_stop(g:job)
     endif
-    cw
 endfunction
 
+function Run()
+    call Javac()
+    while job_status(g:job) != "dead"
+    endwhile
+
+    let s:information=readfile($HOME . "/.cache/vim/javac")
+
+    if s:information == []
+        call Java()
+    else
+        if strcharpart(s:information[0],0,1) == '注'
+            call Java()
+        else
+            if bufexists("java") == 1
+                bdelete java
+            endif
+            cg ~/.cache/vim/javac
+            cw
+        endif
+    endif
+endfunction
 
 "java-JavaComplete2按键
 nmap <leader>jI <Plug>(JavaComplete-Imports-AddMissing)
@@ -75,5 +96,4 @@ vmap <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
 nmap <silent> <buffer> <leader>jn <Plug>(JavaComplete-Generate-NewClass)
 nmap <silent> <buffer> <leader>jN <Plug>(JavaComplete-Generate-ClassInFile)
 
-nmap <leader>rr :call JavaRun()<cr>
-nmap <leader>rc :call JavacRun()<cr><cr>
+nmap <leader>r :call Run()<cr>
