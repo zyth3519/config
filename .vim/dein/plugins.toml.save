@@ -1,10 +1,6 @@
 [[plugins]]
-repo = 'morhetz/gruvbox'
-hook_add = '''
-    colorscheme gruvbox
-    set background=dark
-'''
-
+repo = ' skreek/skeletor.vim'
+h
 [[plugins]]
 repo = 'Yggdroot/indentLine'
 hook_add = 'source ~/.vim/plugins/indentLine.vim'
@@ -17,11 +13,9 @@ repo = 'jiangmiao/auto-pairs'
 
 [[plugins]]
 repo =  'vim-airline/vim-airline'
-hook_add = 'source ~/.vim/plugins/airline.vim'
 
 [[plugins]]
 repo =  'vim-airline/vim-airline-themes'
-hook_add = 'source ~/.vim/plugins/airline-themes.vim'
 
 [[plugins]]
 repo = 'w0rp/ale'

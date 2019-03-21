@@ -20,6 +20,4 @@ if dein#load_state('~/.cache/dein')
   call dein#end()
   call dein#save_state()
 endif
-
-filetype plugin indent on
-syntax enable
+syntax on
