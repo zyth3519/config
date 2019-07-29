@@ -1,8 +1,5 @@
 {
-    "python.autoComplete.addBrackets": true,
-    "python.jediEnabled": true,
-    "python.autoComplete.extraPaths": [
-        "${env:SPARK_HOME}/python",
-        "${env:SPARK_HOME}/python/pyspark"
-    ]
+
+    "python.autoComplete.addBrackets": true
+
 }

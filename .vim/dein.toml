@@ -1,11 +1,5 @@
 [[plugins]]
-repo = 'easymotion/vim-easymotion'
-
-[[plugins]]
 repo = 'majutsushi/tagbar'
-
-[[plugins]]
-repo = 'Chiel92/vim-autoformat'
 
 [[plugins]]
 repo = 'jiangmiao/auto-pairs'
@@ -36,4 +30,12 @@ repo = 'Yggdroot/indentLine'
 hook_add = '''
     let g:indentLine_char='┆'
     let g:indentLine_enabled = 1
+'''
+
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+merge = 0
+rev = 'release'
+hook_add = '''
+    source ~/.vim/plugins/coc.vim
 '''
