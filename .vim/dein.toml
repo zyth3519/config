@@ -33,6 +33,9 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'Chiel92/vim-autoformat'
+
+[[plugins]]
 repo = 'neoclide/coc.nvim'
 merge = 0
 rev = 'release'

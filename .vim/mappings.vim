@@ -1,7 +1,7 @@
-nmap <c-j> <c-w><c-j>
-nmap <c-k> <c-w><c-k>
-nmap <c-l> <c-w><c-l>
-nmap <c-h> <c-w><c-h>
+nmap j <c-w><c-j>
+nmap k <c-w><c-k>
+nmap l <c-w><c-l>
+nmap l <c-w><c-h>
 
 nmap <leader>1 1gt
 nmap <leader>2 2gt
@@ -19,6 +19,7 @@ map <F2> :NERDTreeToggle<cr>
 map <F3> :TagbarToggle<CR>
 
 map <F8> :Autoformat<CR>
+map  :Autoformat<CR>
 
 " <Leader>f{char} to move to {char}
 map  <Leader>f <Plug>(easymotion-bd-f)
