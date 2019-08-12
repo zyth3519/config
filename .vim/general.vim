@@ -25,5 +25,7 @@ set expandtab
 set autoindent  
 set fileformat=unix
 
+filetype plugin on
+
 let mapleader = ";"
 let g:airline_powerline_fonts = 1

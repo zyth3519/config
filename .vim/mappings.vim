@@ -1,7 +1,7 @@
 nmap j <c-w><c-j>
 nmap k <c-w><c-k>
 nmap l <c-w><c-l>
-nmap l <c-w><c-h>
+nmap h <c-w><c-h>
 
 nmap <leader>1 1gt
 nmap <leader>2 2gt
@@ -106,3 +106,7 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+
+nnoremap  :call NERDComment(0,"toggle")<CR>
+vnoremap  :call NERDComment(0,"toggle")<CR>
