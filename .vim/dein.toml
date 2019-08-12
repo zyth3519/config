@@ -21,24 +21,36 @@ repo = 'kien/ctrlp.vim'
 [[plugins]]
 repo = 'morhetz/gruvbox'
 hook_add = '''
-    colorscheme gruvbox
-    set background=dark
+colorscheme gruvbox
+set background=dark
 '''
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'
 hook_add = '''
-    let g:indentLine_char='┆'
-    let g:indentLine_enabled = 1
+let g:indentLine_char='┆'
+let g:indentLine_enabled = 1
 '''
 
 [[plugins]]
 repo = 'Chiel92/vim-autoformat'
 
 [[plugins]]
+repo = 'mattn/emmet-vim'
+hook_add = '''
+let g:user_emmet_mode='a'
+'''
+
+[[plugins]]
+repo = 'scrooloose/nerdcommenter'
+hook_add = '''
+source ~/.vim/plugins/nerdcommenter.vim
+'''
+
+[[plugins]]
 repo = 'neoclide/coc.nvim'
 merge = 0
 rev = 'release'
 hook_add = '''
-    source ~/.vim/plugins/coc.vim
+source ~/.vim/plugins/coc.vim
 '''
