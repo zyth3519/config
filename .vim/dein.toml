@@ -36,12 +36,6 @@ let g:indentLine_enabled = 1
 repo = 'Chiel92/vim-autoformat'
 
 [[plugins]]
-repo = 'mattn/emmet-vim'
-hook_add = '''
-let g:user_emmet_mode='a'
-'''
-
-[[plugins]]
 repo = 'scrooloose/nerdcommenter'
 hook_add = '''
 source ~/.vim/plugins/nerdcommenter.vim
