@@ -1,7 +1,0 @@
-{
-    "python.autoComplete.addBrackets": true,
-    "html.validate.html": true,
-    "html.validate.scripts": true,
-    "html.validate.styles": true,
-    "xml.java.home": "/usr/lib/jvm/java-12-openjdk"
-}
