@@ -1,0 +1,50 @@
+[[plugins]]
+repo = 'majutsushi/tagbar'
+
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+
+[[plugins]]
+repo =  'vim-airline/vim-airline'
+hook_add = 'let g:airline#extensions#tabline#enabled = 1'
+
+[[plugins]]
+repo =  'vim-airline/vim-airline-themes'
+hook_add = 'let g:airline_theme="sol"'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'kien/ctrlp.vim'
+
+[[plugins]]
+repo = 'morhetz/gruvbox'
+hook_add = '''
+colorscheme gruvbox
+set background=dark
+'''
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+hook_add = '''
+let g:indentLine_char='┆'
+let g:indentLine_enabled = 1
+'''
+
+[[plugins]]
+repo = 'Chiel92/vim-autoformat'
+
+[[plugins]]
+repo = 'scrooloose/nerdcommenter'
+hook_add = '''
+source ~/.vim/plugins/nerdcommenter.vim
+'''
+
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+merge = 0
+rev = 'release'
+hook_add = '''
+source ~/.vim/plugins/coc.vim
+'''
