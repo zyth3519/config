@@ -1,7 +1,21 @@
 {
     "python.autoComplete.addBrackets": true,
-    "html.validate.html": true,
-    "html.validate.scripts": true,
-    "html.validate.styles": true,
-    "xml.java.home": "/usr/lib/jvm/java-12-openjdk"
+        "html.validate.html": true,
+        "html.validate.scripts": true,
+        "html.validate.styles": true,
+        "xml.java.home": "/usr/lib/jvm/java-13-openjdk",
+
+        "languageserver": {
+            "ccls": {
+                "command": "ccls",
+                "filetypes": ["c", "cpp", "objc", "objcpp"],
+                "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+                "initializationOptions": {
+                    "cache": {
+                        "directory": "/tmp/ccls"
+                    }
+                }
+            }
+        }
+
 }
