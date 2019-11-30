@@ -5,7 +5,7 @@ function Run(cmd) abort
     let l:pathFullFileName = l:path . "/" . l:fullFileName
     let l:pathFileName = l:path . "/" . l:fileName
 
-    let l:buferName = "[buffer] " . l:fullFileName
+    let l:buferName = "buffer_" . l:fullFileName
 
     " 如果运行后的缓冲区存在删除缓冲区
     if bufexists(l:buferName) == 1
