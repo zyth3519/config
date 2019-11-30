@@ -2,22 +2,22 @@ function Run(cmd) abort
     let l:path = expand('%:p:h')
     let l:fileName = expand('%:t:r')
     let l:fullFileName = expand('%')
-
     let l:pathFullFileName = l:path . "/" . l:fullFileName
-    let l:pathFileName = l:path . "/out/" . l:fileName
+    let l:pathFileName = l:path . "/" . l:fileName
+
+    let l:buferName = "[buffer] " . l:fullFileName
 
     " 如果运行后的缓冲区存在删除缓冲区
-    if bufexists(l:pathFileName) == 1
-        execute("bdelete " . l:pathFileName)
+    if bufexists(l:buferName) == 1
+        execute("bdelete " . l:buferName)
     endif
 
-    " 因为当前文件的缓冲区名字是l:pathFullFileName所以用l:pathFileName设置缓冲区名
-    call term_start($HOME . "/.vim/shell/" . a:cmd ." " . l:pathFullFileName . " " . l:pathFileName,
-            \ {"term_rows":10, "term_name":l:pathFileName})
+    call term_start($HOME . "/.vim/shell/" . a:cmd ." " . l:pathFullFileName . " " . l:pathFileName . " " . l:path,
+            \ {"term_rows":10, "term_name":l:buferName})
 
     " 定时器每隔500毫秒检查命令是否完成
-    call timer_start(500, 'Move', {'repeat': -1})
-    let s:bufId = bufnr(l:pathFileName)
+    call timer_start(100, 'Move', {'repeat': -1})
+    let s:bufId = bufnr(l:buferName)
 endfunction
 
 function Move(timer)
