@@ -27,5 +27,5 @@ function Move(timer)
     endif
 endfunction
 
-autocmd FileType c command Run :call Run("runC")
-autocmd FileType python command Run :call Run("runPy")
+autocmd FileType c command! Run :call Run("runC")
+autocmd FileType python command! Run :call Run("runPy")
