@@ -17,6 +17,7 @@ repo = 'scrooloose/nerdtree'
 
 [[plugins]]
 repo = 'kien/ctrlp.vim'
+hook_add = 'source ~/.vim/plugins/ctrlp.vim'
 
 [[plugins]]
 repo = 'morhetz/gruvbox'

@@ -1,5 +1,11 @@
 #!/bin/bash
-cd $3
-gcc $1  -lm -o $2
 
-$2
+cd $3
+
+if [ ! -d out/$4 ]; then
+    mkdir -p out/$4
+fi
+
+gcc $1 -Wall -lm -o out/$2
+
+out/$2
