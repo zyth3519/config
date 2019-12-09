@@ -3,7 +3,7 @@
         "html.validate.html": true,
         "html.validate.scripts": true,
         "html.validate.styles": true,
-        "xml.java.home": "/usr/lib/jvm/java-13-openjdk",
+        "xml.java.home": "/usr/lib/jvm/java-11-openjdk-amd64",
 
         "languageserver": {
             "ccls": {
@@ -16,6 +16,9 @@
                     }
                 }
             }
-        }
+        },
 
+        "python.jediEnabled": false,
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true
 }
