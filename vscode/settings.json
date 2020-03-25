@@ -1,0 +1,21 @@
+{
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.iconTheme": "Monokai Pro Icons",
+    "terminal.external.windowsExec": "powershell.exe",
+    "terminal.integrated.shell.windows": "powershell.exe",
+    "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
+    "python.jediEnabled": false,
+    "[xml]": {
+        "editor.defaultFormatter": "DotJoshJohnson.xml"
+    },
+    "java.errors.incompleteClasspath.severity": "ignore",
+    "maven.executable.path": "C:\\Users\\zythp\\Apps\\maven"
+}
