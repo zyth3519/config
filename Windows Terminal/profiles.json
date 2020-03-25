@@ -56,6 +56,7 @@
             "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
             "name": "Windows PowerShell",
             "fontSize": 10,
+            "cursorShape": "filledBox",
             // "cursorColor": "#000000",
             "colorScheme": "BirdsOfParadise",
             "commandline": "powershell.exe",
