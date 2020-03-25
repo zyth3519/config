@@ -1,0 +1,186 @@
+// To view the default settings, hold "alt" while clicking on the "Settings" button.
+// For documentation on these settings, see: https://aka.ms/terminal-documentation
+{
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "globals": {
+        "initialCols": 120,
+        "initialRows": 30
+    },
+    "profiles": [
+        {
+            // Make changes here to the cmd.exe profile
+            "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+            "name": "cmd",
+            "fontSize": 10,
+            "fontFace": "Sarasa Term SC",
+            // "cursorColor": "#000000",
+            "commandline": "cmd.exe",
+            // "colorScheme": "AtomOneLight",
+            "hidden": false
+        },
+        {
+            // Make changes here to the cmd.exe profile
+            "guid": "{98894ca2-99b7-4290-87d6-449c07508ba1}",
+            "name": "MySql",
+            "cursorShape": "filledBox",
+            "icon": "C:\\Users\\zythp\\Pictures\\Icon\\mysql.png",
+            "commandline": "mycli -u root",
+            "fontFace": "Source Code Pro for Powerline",
+            "fontSize": 10,
+            "padding": "0, 0, 0, 0",
+            "scrollbarState": "hidden"
+        },
+        {
+            "guid": "{728e5eef-7d1d-4ec9-9050-2424b9c055cf}",
+            "name": "Ubuntu Server",
+            // 主题颜色
+            // "colorScheme": "AtomOneLight",
+            // 光标颜色
+            // "cursorColor": "#000000",
+            // 光标样式
+            "cursorShape": "filledBox",
+            // 图标
+            "icon": "C:\\Users\\zythp\\Pictures\\Icon\\ubuntu.png",
+            // 字体
+            "fontFace": "Source Code Pro for Powerline",
+            "fontSize": 10,
+            // 内边距
+            "padding": "0, 0, 0, 0",
+            // 隐藏滚动条
+            "scrollbarState": "hidden",
+            "commandline": "ssh.exe zyth@192.168.56.1"
+        },
+        {
+            // Make changes here to the powershell.exe profile
+            "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+            "name": "Windows PowerShell",
+            "fontSize": 10,
+            // "cursorColor": "#000000",
+            "colorScheme": "BirdsOfParadise",
+            "commandline": "powershell.exe",
+            // "fontFace": "Sarasa Term SC",
+            "fontFace": "Source Code Pro for Powerline",
+            "hidden": false
+        },
+        {
+            "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+            "hidden": true,
+            "fontSize": 10,
+            "name": "Azure Cloud Shell",
+            "source": "Windows.Terminal.Azure"
+        }
+    ],
+    // Add custom color schemes to this array
+    // 主题
+    "schemes": [
+        {
+            "name": "Atom",
+            "black": "#000000",
+            "red": "#fd5ff1",
+            "green": "#87c38a",
+            "yellow": "#ffd7b1",
+            "blue": "#85befd",
+            "purple": "#b9b6fc",
+            "cyan": "#85befd",
+            "white": "#e0e0e0",
+            "brightBlack": "#000000",
+            "brightRed": "#fd5ff1",
+            "brightGreen": "#94fa36",
+            "brightYellow": "#f5ffa8",
+            "brightBlue": "#96cbfe",
+            "brightPurple": "#b9b6fc",
+            "brightCyan": "#85befd",
+            "brightWhite": "#e0e0e0",
+            "background": "#161719",
+            "foreground": "#c5c8c6"
+        },
+        {
+            "name": "AtomOneLight",
+            "black": "#000000",
+            "red": "#de3e35",
+            "green": "#3f953a",
+            "yellow": "#d2b67c",
+            "blue": "#2f5af3",
+            "purple": "#950095",
+            "cyan": "#3f953a",
+            "white": "#bbbbbb",
+            "brightBlack": "#000000",
+            "brightRed": "#de3e35",
+            "brightGreen": "#3f953a",
+            "brightYellow": "#d2b67c",
+            "brightBlue": "#2f5af3",
+            "brightPurple": "#a00095",
+            "brightCyan": "#3f953a",
+            "brightWhite": "#ffffff",
+            "background": "#f9f9f9",
+            "foreground": "#2a2c33"
+        },
+        {
+            "name": "Afterglow",
+            "black": "#151515",
+            "red": "#ac4142",
+            "green": "#7e8e50",
+            "yellow": "#e5b567",
+            "blue": "#6c99bb",
+            "purple": "#9f4e85",
+            "cyan": "#7dd6cf",
+            "white": "#d0d0d0",
+            "brightBlack": "#505050",
+            "brightRed": "#ac4142",
+            "brightGreen": "#7e8e50",
+            "brightYellow": "#e5b567",
+            "brightBlue": "#6c99bb",
+            "brightPurple": "#9f4e85",
+            "brightCyan": "#7dd6cf",
+            "brightWhite": "#f5f5f5",
+            "background": "#212121",
+            "foreground": "#d0d0d0"
+          },
+          {
+            "name": "Arthur",
+            "black": "#3d352a",
+            "red": "#cd5c5c",
+            "green": "#86af80",
+            "yellow": "#e8ae5b",
+            "blue": "#6495ed",
+            "purple": "#deb887",
+            "cyan": "#b0c4de",
+            "white": "#bbaa99",
+            "brightBlack": "#554444",
+            "brightRed": "#cc5533",
+            "brightGreen": "#88aa22",
+            "brightYellow": "#ffa75d",
+            "brightBlue": "#87ceeb",
+            "brightPurple": "#996600",
+            "brightCyan": "#b0c4de",
+            "brightWhite": "#ddccbb",
+            "background": "#1c1c1c",
+            "foreground": "#ddeedd"
+          },
+          {
+            "name": "BirdsOfParadise",
+            "black": "#573d26",
+            "red": "#be2d26",
+            "green": "#6ba18a",
+            "yellow": "#e99d2a",
+            "blue": "#5a86ad",
+            "purple": "#ac80a6",
+            "cyan": "#74a6ad",
+            "white": "#e0dbb7",
+            "brightBlack": "#9b6c4a",
+            "brightRed": "#e84627",
+            "brightGreen": "#95d8ba",
+            "brightYellow": "#d0d150",
+            "brightBlue": "#b8d3ed",
+            "brightPurple": "#d19ecb",
+            "brightCyan": "#93cfd7",
+            "brightWhite": "#fff9d5",
+            "background": "#2a1f1d",
+            "foreground": "#e0dbb7"
+          }
+    ],
+    // Add any keybinding overrides to this array.
+    // To unbind a default keybinding, set the command to "unbound"
+    "keybindings": []
+}
